@@ -99,9 +99,9 @@ namespace Completed
             ////Call the RandomizeSfx function of SoundManager passing in the two audio clips to choose randomly between.
             //SoundManager.instance.RandomizeSfx(attackSound1, attackSound2);
         }
-        public void DamageEnemy()
+        public void DamageEnemy(int dmg)
         {
-            health--;
+            health-=dmg;
             if(health == 0)
             {
                 isDead = true;
