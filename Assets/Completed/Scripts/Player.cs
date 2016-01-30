@@ -10,8 +10,9 @@ namespace Completed
 		public float restartLevelDelay = 1f;		//Delay time in seconds to restart level.
 		public int pointsPerFood = 10;				//Number of points to add to player food points when picking up a food object.
 		public int pointsPerSoda = 20;				//Number of points to add to player food points when picking up a soda object.
-		public int wallDamage = 1;					//How much damage a player does to a wall when chopping it.
-		public Text foodText;						//UI Text to display current player food total.
+		public int wallDamage = 1;                  //How much damage a player does to a wall when chopping it.
+        public int enemyDamage = 1;                 //How much damge a player does to a enemy.
+        public Text foodText;						//UI Text to display current player food total.
 		public AudioClip moveSound1;				//1 of 2 Audio clips to play when player moves.
 		public AudioClip moveSound2;				//2 of 2 Audio clips to play when player moves.
 		public AudioClip eatSound1;					//1 of 2 Audio clips to play when player collects a food object.
@@ -172,7 +173,7 @@ namespace Completed
             {
                 hitEnemy = component as Enemy;
                 //Call the DamageEnemy function from the Enemy we are hitting 
-                hitEnemy.DamageEnemy();
+                hitEnemy.DamageEnemy(enemyDamage);
             }
          
             
